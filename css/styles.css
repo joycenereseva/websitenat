@@ -1009,6 +1009,26 @@ footer a {
   margin-bottom: 1.5rem;
 }
 
+.contact-package-title {
+  font-family: var(--font-head);
+  font-size: clamp(1.05rem, 3.2vw, 1.35rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  color: var(--teal-dark);
+  margin-bottom: 1.75rem;
+}
+
+.contact-package-renewal {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.92em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 @media (min-width: 900px) {
   .topics-pdf-layout {
     grid-template-columns: 1fr 1fr;
