@@ -35,9 +35,6 @@ body {
   color: var(--text-dark);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 img {
@@ -925,112 +922,6 @@ footer a {
 
   .nav-brand-text span:last-child {
     font-size: 1.15rem;
-  }
-}
-
-/* —— Slides do PDF —— */
-.pdf-slide-wrap {
-  max-width: 420px;
-  margin-inline: auto;
-}
-
-.pdf-slide {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 16px 48px rgba(13, 92, 107, 0.15);
-}
-
-.pdf-slide--wide {
-  max-width: 480px;
-}
-
-.bonus-prints {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 480px;
-  margin-inline: auto;
-}
-
-.topics-pdf-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-.topics-pdf-list {
-  list-style: none;
-  font-family: var(--font-head);
-}
-
-.topics-pdf-list li {
-  position: relative;
-  padding-left: 1.25rem;
-  margin-bottom: 0.65rem;
-  color: var(--teal-dark);
-  font-size: 0.98rem;
-}
-
-.topics-pdf-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--teal);
-}
-
-.topics-pdf-list a {
-  color: inherit;
-  border-bottom: 1px solid rgba(26, 127, 142, 0.25);
-}
-
-.topics-pdf-list a:hover {
-  color: var(--teal);
-}
-
-.contact-only {
-  background: var(--white);
-  text-align: center;
-  padding: 4rem 0;
-}
-
-.contact-only .contact-box {
-  max-width: 520px;
-  margin-inline: auto;
-  padding: 2rem;
-  border-radius: 24px;
-  background: var(--teal-light);
-  border: 1px solid rgba(13, 92, 107, 0.12);
-}
-
-.contact-only p {
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-
-.contact-package-title {
-  font-family: var(--font-head);
-  font-size: clamp(1rem, 3vw, 1.28rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  line-height: 1.5;
-  color: var(--teal-dark);
-  margin-bottom: 1.75rem;
-}
-
-@media (min-width: 900px) {
-  .topics-pdf-layout {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-
-  .bonus-prints {
-    max-width: 520px;
   }
 }
 
