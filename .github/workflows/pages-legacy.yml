@@ -1,0 +1,22 @@
+# Fallback: publica em gh-pages (branch já usada pelo peaceiris).
+# Ative em: Settings → Pages → Deploy from branch → gh-pages / (root)
+
+name: Publish gh-pages (on demand)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: .
+          exclude_assets: .github
