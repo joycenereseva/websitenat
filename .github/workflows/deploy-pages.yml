@@ -1,4 +1,4 @@
-name: Deploy site to GitHub Pages
+name: Site on main (GitHub Pages)
 
 on:
   push:
@@ -6,19 +6,17 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  deploy:
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: .
-          exclude_assets: .github
+      - uses: actions/checkout@v4
+      - name: Verify static site files
+        run: |
+          test -f index.html
+          test -f CNAME
+          test -f css/styles.css
+          test -f js/main.js
+          echo "Site pronto na branch main para GitHub Pages."
