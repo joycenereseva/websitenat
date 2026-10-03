@@ -1,8 +1,11 @@
 GitHub Pages — configuração correta (gratuita)
 ==============================================
 
-URL do site (compartilhe com os pais):
+URL CORRETA (compartilhe com os pais):
   https://joycenereseva.github.io/websitenat/
+
+NÃO USE (dá erro DNS se não comprou domínio):
+  natacao.profjoyceneres.com
 
 Em: https://github.com/joycenereseva/websitenat/settings/pages
 
