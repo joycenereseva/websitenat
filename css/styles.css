@@ -414,10 +414,43 @@ section {
   color: var(--teal-dark);
 }
 
-.intro-meta span {
+.intro-meta span,
+.intro-meta a {
   padding: 0.35rem 0.75rem;
   background: var(--teal-light);
   border-radius: 8px;
+}
+
+.intro-meta a {
+  color: var(--teal-dark);
+  text-decoration: none;
+}
+
+.intro-meta a:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+.intro-site-link {
+  background: var(--teal) !important;
+  color: #fff !important;
+}
+
+.intro-site-link:hover {
+  background: var(--teal-dark) !important;
+}
+
+.faq-answer-inner a,
+.cta-note a,
+footer a {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.faq-answer-inner a:hover,
+.cta-note a:hover,
+footer a:hover {
+  color: var(--teal-dark);
 }
 
 /* —— Index topics —— */
