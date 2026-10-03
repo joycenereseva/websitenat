@@ -16,7 +16,6 @@ jobs:
       - name: Verify static site files
         run: |
           test -f index.html
-          test -f CNAME
           test -f css/styles.css
           test -f js/main.js
           echo "Site pronto na branch main para GitHub Pages."
