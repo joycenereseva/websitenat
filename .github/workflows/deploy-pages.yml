@@ -1,3 +1,6 @@
+# Site estático gratuito: https://joycenereseva.github.io/websitenat/
+# Não use arquivo CNAME nem domínio em Settings → Pages (exige DNS pago).
+
 name: Site on main (GitHub Pages)
 
 on:
@@ -6,16 +9,37 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: pages-main
+  cancel-in-progress: true
 
 jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify static site files
+        with:
+          fetch-depth: 0
+
+      - name: Remove CNAME if GitHub re-added custom domain
+        run: |
+          if [ -f CNAME ]; then
+            echo "::warning::Arquivo CNAME detectado (${CNAME:-CNAME}). Removendo para manter só a URL gratuita do GitHub Pages."
+            cat CNAME || true
+            rm -f CNAME
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git diff --staged --quiet || git commit -m "Remove CNAME — site publicado só em joycenereseva.github.io/websitenat"
+            git push
+          fi
+
+      - name: Verify static site (no custom domain)
         run: |
           test -f index.html
           test -f css/styles.css
           test -f js/main.js
-          echo "Site pronto na branch main para GitHub Pages."
+          test ! -f CNAME
+          echo "OK: https://joycenereseva.github.io/websitenat/"

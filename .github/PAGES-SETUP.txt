@@ -1,0 +1,16 @@
+GitHub Pages — configuração correta (gratuita)
+==============================================
+
+URL do site (compartilhe com os pais):
+  https://joycenereseva.github.io/websitenat/
+
+Em: https://github.com/joycenereseva/websitenat/settings/pages
+
+  Source: Deploy from a branch
+  Branch: main
+  Folder: / (root)
+  Custom domain: DEIXE EM BRANCO (não preencher)
+
+Se preencher "Custom domain", o GitHub cria o arquivo CNAME e o site pode
+parar de abrir até existir domínio comprado + DNS. O workflow na main remove
+CNAME automaticamente, mas o ideal é não ativar domínio personalizado.
