@@ -853,44 +853,6 @@ footer a:hover {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* —— Depoimentos —— */
-.depoimentos {
-  background: var(--teal-light);
-}
-
-.depoimentos-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.35rem;
-  max-width: 22rem;
-  margin-inline: auto;
-}
-
-.depoimento-card {
-  margin: 0;
-  width: 100%;
-}
-
-.depoimento-card img {
-  width: 100%;
-  max-width: min(100%, 320px);
-  margin-inline: auto;
-  border-radius: 14px;
-  box-shadow: 0 10px 32px rgba(13, 92, 107, 0.12);
-  border: 1px solid rgba(13, 92, 107, 0.08);
-}
-
-@media (min-width: 640px) {
-  .depoimentos-grid {
-    max-width: 26rem;
-  }
-
-  .depoimento-card img {
-    max-width: 340px;
-  }
-}
-
 /* —— Transform strip —— */
 .transform {
   background: var(--teal-dark);
@@ -1292,60 +1254,91 @@ footer .footer-contact a:hover {
 /* —— About —— */
 .about {
   background: var(--surface-darker);
-  padding-bottom: 0;
+  padding: clamp(3rem, 8vw, 4.5rem) 0;
+}
+
+.about-container {
+  max-width: 26rem;
+  margin-inline: auto;
 }
 
 .about-card {
-  display: grid;
-  grid-template-columns: minmax(128px, 38%) minmax(0, 1fr);
-  gap: 0;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background: var(--surface-dark);
   border-radius: 24px;
-  overflow: visible;
-  max-width: 960px;
+  overflow: hidden;
   margin-inline: auto;
 }
 
 .about-photo-wrap {
   background: #0f2a30;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: clamp(0.75rem, 2.5vw, 1.25rem);
-  min-height: 0;
-  border-radius: 24px 0 0 24px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 1.5rem) clamp(0.75rem, 3vw, 1.25rem) 0;
+  width: 100%;
 }
 
 .about-photo {
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height: auto;
-  max-height: min(52vh, 420px);
+  max-height: min(62vh, 520px);
   object-fit: contain;
-  object-position: left center;
+  object-position: center top;
+  display: block;
 }
 
 .about-body {
-  padding: clamp(1.35rem, 4vw, 2.25rem);
+  padding: clamp(1.25rem, 4vw, 2rem) clamp(1.35rem, 4vw, 2rem) clamp(1.75rem, 5vw, 2.25rem);
   color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: 0 24px 24px 0;
+  gap: 0;
+}
+
+.about-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 0.65rem;
 }
 
 .about-body h2 {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: clamp(1.85rem, 6vw, 2.35rem);
   font-style: italic;
+  font-weight: 700;
   color: #f0ede6;
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1.15rem;
+  line-height: 1.15;
 }
 
 .about-body p {
   margin-bottom: 1rem;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .about-container {
+    max-width: 28rem;
+  }
 }
 
 /* —— FAQ —— */
@@ -1519,32 +1512,8 @@ footer a {
     height: 104px;
   }
 
-  .about-card {
-    grid-template-columns: minmax(200px, 42%) minmax(0, 1fr);
-  }
-
   .nav-brand-text span:last-child {
     font-size: 1.15rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .about-card {
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo-wrap {
-    border-radius: 24px 24px 0 0;
-    justify-content: center;
-  }
-
-  .about-body {
-    border-radius: 0 0 24px 24px;
-  }
-
-  .about-photo {
-    max-height: min(48vh, 360px);
-    object-position: center bottom;
   }
 }
 
