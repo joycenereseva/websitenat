@@ -215,8 +215,8 @@ a {
 /* —— Hero —— */
 .hero {
   position: relative;
-  min-height: 92vh;
-  padding: calc(var(--nav-h) + 3rem) 0 4rem;
+  min-height: auto;
+  padding: calc(var(--nav-h) + 2rem) 0 3rem;
   background: var(--surface-dark);
   color: #fff;
   overflow: hidden;
@@ -368,14 +368,26 @@ section {
 }
 
 .intro-card {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
   background: var(--bg);
   border-radius: 24px;
   padding: 2rem;
   border: 1px solid rgba(13, 92, 107, 0.08);
+}
+
+.intro-photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.25rem;
+}
+
+.intro-photos .photo-circle img {
+  width: clamp(72px, 20vw, 120px);
+  height: clamp(72px, 20vw, 120px);
+  border-color: var(--teal);
 }
 
 .intro-photo {
