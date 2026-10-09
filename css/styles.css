@@ -1090,6 +1090,13 @@ footer a:hover {
   font-size: 1rem;
 }
 
+.plans-conditions > p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
 .plans-conditions ul {
   padding-left: 1.1rem;
   margin-bottom: 1rem;
@@ -1324,6 +1331,7 @@ footer .footer-contact a:hover {
   margin-bottom: 1rem;
   font-size: 0.92rem;
   line-height: 1.55;
+  text-align: justify;
 }
 
 .about-body p:last-child {
