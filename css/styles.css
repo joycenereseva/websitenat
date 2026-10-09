@@ -1327,7 +1327,7 @@ footer .footer-contact a:hover {
   line-height: 1.15;
 }
 
-.about-body p {
+.about-body p:not(.about-label) {
   margin-bottom: 1rem;
   font-size: 0.92rem;
   line-height: 1.55;
