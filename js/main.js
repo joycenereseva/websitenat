@@ -41,12 +41,14 @@ const revealObserver = new IntersectionObserver(
 );
 revealEls.forEach((el) => revealObserver.observe(el));
 
-document.querySelectorAll(".faq-item").forEach((item) => {
-  const btn = item.querySelector(".faq-question");
-  btn?.addEventListener("click", () => {
-    const wasOpen = item.classList.contains("open");
-    document.querySelectorAll(".faq-item.open").forEach((i) => i.classList.remove("open"));
-    if (!wasOpen) item.classList.add("open");
+document.querySelectorAll(".accordion-list").forEach((list) => {
+  list.querySelectorAll(".faq-item").forEach((item) => {
+    const btn = item.querySelector(".faq-question");
+    btn?.addEventListener("click", () => {
+      const wasOpen = item.classList.contains("open");
+      list.querySelectorAll(".faq-item.open").forEach((i) => i.classList.remove("open"));
+      if (!wasOpen) item.classList.add("open");
+    });
   });
 });
 

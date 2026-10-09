@@ -627,6 +627,97 @@ section {
   font-size: 1.1rem;
 }
 
+.diferencial-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  margin-bottom: 1rem;
+}
+
+.valorizo-heading {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--teal-dark);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.valorizo-arrow {
+  color: var(--teal);
+  font-size: 1.25rem;
+}
+
+.differencial-list {
+  max-width: 100%;
+}
+
+.differencial-list .faq-item {
+  margin-bottom: 0.5rem;
+}
+
+.material-rows {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.material-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  background: var(--teal-light);
+  border: 1px solid rgba(13, 92, 107, 0.08);
+}
+
+.material-row-label {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--teal-dark);
+}
+
+.material-row-arrow {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.material-row-images {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.photo-circle--sm img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--teal);
+  display: block;
+}
+
+.about-photo {
+  width: 100%;
+  max-height: min(70vh, 520px);
+  object-fit: contain;
+  object-position: top center;
+  background: #0f2a30;
+}
+
 /* —— Steps —— */
 .steps {
   background: var(--white);
@@ -1253,12 +1344,16 @@ footer a {
   }
 
   .intro-card {
-    grid-template-columns: 280px 1fr;
     padding: 2.5rem;
   }
 
-  .intro-photo {
-    margin-inline: 0;
+  .material-row {
+    grid-template-columns: minmax(140px, 1fr) auto minmax(140px, 1fr);
+  }
+
+  .photo-circle--sm img {
+    width: 80px;
+    height: 80px;
   }
 
   .nav-brand-text span:last-child {
@@ -1268,7 +1363,27 @@ footer a {
 
 @media (max-width: 520px) {
   .nav-brand-text {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .nav-brand-text span:first-child {
+    font-size: 0.62rem;
+  }
+
+  .nav-brand-text span:last-child {
+    font-size: 0.78rem;
+  }
+
+  .nav-avatar-wrap {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-avatar {
+    width: 44px;
+    height: 44px;
   }
 
   .btn-whatsapp span.label {
