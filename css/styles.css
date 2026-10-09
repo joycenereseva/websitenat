@@ -997,11 +997,20 @@ footer a:hover {
   font-weight: 600;
   color: var(--teal);
   background: var(--teal-light);
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
   padding: 0.35rem 0.65rem;
   border-radius: 8px;
   margin-bottom: 1rem;
   width: fit-content;
+}
+
+.plan-save-sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 .plan-card--featured .plan-save {
