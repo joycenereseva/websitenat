@@ -1357,14 +1357,9 @@ footer .footer-contact a:hover {
   align-items: stretch;
 }
 
-.about-label {
-  font-family: var(--font-head);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
+.about-stack > .section-title {
   text-align: center;
+  color: #fff;
   margin: 0;
   padding: clamp(1.35rem, 4vw, 2rem) clamp(1.35rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem);
 }
