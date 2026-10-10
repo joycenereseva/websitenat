@@ -1176,6 +1176,11 @@ footer a:hover {
   line-height: 1.6;
 }
 
+.plans-conditions .plan-tier-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .plans-individual {
   font-size: 0.88rem;
   color: var(--teal-dark);
