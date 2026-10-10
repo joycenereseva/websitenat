@@ -1304,14 +1304,14 @@ footer .footer-contact a:hover {
   align-items: stretch;
 }
 
-.about-heading {
-  font-family: var(--font-serif);
-  font-size: clamp(1.85rem, 6vw, 2.35rem);
-  font-style: italic;
-  font-weight: 700;
-  color: #f0ede6;
+.about-label {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
   text-align: center;
-  line-height: 1.15;
   margin: 0;
   padding: clamp(1.35rem, 4vw, 2rem) clamp(1.35rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem);
 }
@@ -1354,7 +1354,8 @@ footer .footer-contact a:hover {
   margin-bottom: 0;
 }
 
-.about-body strong {
+.about-body strong,
+.about-accent {
   color: var(--accent);
   font-weight: 600;
 }
