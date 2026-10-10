@@ -635,9 +635,22 @@ footer a:hover {
   color: var(--text-muted);
 }
 
+.pillar-item > div > p,
+.pillar-item > div > ul {
+  padding-left: 0.75rem;
+  text-align: justify;
+  line-height: 1.72;
+}
+
 .pillar-item ul {
   margin-top: 0.5rem;
-  padding-left: 1.1rem;
+  padding-left: calc(1.1rem + 0.75rem);
+}
+
+.differencial-list .faq-answer-inner {
+  padding-left: 0.75rem;
+  text-align: justify;
+  line-height: 1.72;
 }
 
 .pillar-item li {
@@ -732,6 +745,12 @@ footer a:hover {
 .valorizo-compare .transform-item {
   padding: 0.65rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  text-align: center;
+}
+
+.valorizo-section .pillar-scroll {
+  scrollbar-color: var(--accent) rgba(255, 255, 255, 0.08);
 }
 
 .valorizo-compare .transform-item:last-child {
