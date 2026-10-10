@@ -1177,7 +1177,7 @@ footer a:hover {
 }
 
 .plans-conditions .plan-tier-accent {
-  color: var(--accent);
+  color: var(--teal-dark);
   font-weight: 600;
 }
 
@@ -1359,7 +1359,8 @@ footer .footer-contact a:hover {
 
 .about-stack > .section-title {
   text-align: center;
-  color: #fff;
+  color: var(--accent);
+  text-transform: uppercase;
   margin: 0;
   padding: clamp(1.35rem, 4vw, 2rem) clamp(1.35rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem);
 }
