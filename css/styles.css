@@ -821,15 +821,7 @@ footer a:hover {
   text-align: center;
 }
 
-.valorizo-section .valorizo-compare.pillar-scroll {
-  max-height: min(280px, 50vh);
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  padding-right: 0.5rem;
-  padding-inline-end: 0.65rem;
-  scrollbar-width: thin;
+.valorizo-section .pillar-scroll {
   scrollbar-color: var(--accent) rgba(255, 255, 255, 0.08);
 }
 
@@ -880,11 +872,6 @@ footer a:hover {
     padding-left: 1.15rem;
     padding-right: 0.75rem;
     padding-inline-end: 0.85rem;
-  }
-
-  .valorizo-section .valorizo-compare.pillar-scroll {
-    max-height: min(220px, 40vh);
-    padding-inline-end: 0.75rem;
   }
 
   .differencial-lead {
