@@ -3,7 +3,7 @@ const SITE_URL = "https://joycenereseva.github.io/websitenat/";
 const WHATSAPP_URL =
   "https://wa.me/5573991040064?text=" +
   encodeURIComponent(
-    `Olá, Profª Joyce! Vi seu informativo de natação infantil e gostaria de saber mais sobre vagas, horários e planos.\n\n${SITE_URL}`
+    `Olá, Professora Joyce! Gostaria de saber mais sobre as aulas particulares de natação. Meu nome é [Seu Nome], o nome do meu filho(a) é [Nome da Criança] e ele(a) tem [Idade] anos.\n\n${SITE_URL}`
   );
 
 document.querySelectorAll("[data-whatsapp]").forEach((el) => {
