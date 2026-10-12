@@ -690,6 +690,45 @@ footer a:hover {
   margin-bottom: 0.35rem;
 }
 
+.pillar-band-title {
+  font-family: var(--font-head);
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.pillar-band-title--on-dark {
+  color: #f0ede6;
+}
+
+.pillar-item--band-light {
+  background: var(--teal-light);
+  border-color: rgba(13, 92, 107, 0.12);
+}
+
+.pillar-item--band-dark {
+  background: var(--teal-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pillar-item--band-dark .pillar-num {
+  color: var(--accent);
+}
+
+.pillar-item--band-dark p,
+.pillar-item--band-dark ul,
+.pillar-item--band-dark li {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.pillar-item--band-dark strong {
+  color: #fff;
+}
+
 .pillar-scroll {
   max-height: min(320px, 55vh);
   overflow-y: auto;
