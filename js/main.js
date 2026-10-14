@@ -2,10 +2,15 @@ const SITE_URL = "https://joycenereseva.github.io/websitenat/";
 
 const WHATSAPP_MESSAGE = `Olá, Professora Joyce! Gostaria de saber mais sobre as aulas particulares de natação.
 
-Meu nome é: 
-O nome do meu filho(a): 
-A idade: 
-A piscina é na região: 
+Meu nome:
+
+Nome do meu filho(a):
+
+Idade:
+
+Local da piscina (bairro, rua):
+
+Me interessei pelo plano (regular, reduzida, premium):
 
 ${SITE_URL}`;
 
