@@ -3,7 +3,7 @@
   --teal-dark: #0d5c6b;
   --teal-light: #e8f4f6;
   --surface-dark: #0f2a30;
-  --surface-darker: #0a0a0a;
+  --surface-darker: #0a2228;
   --bg: #f8f8f6;
   --white: #ffffff;
   --text-dark: #1a1a1a;
@@ -27,6 +27,8 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
+  color-scheme: light;
 }
 
 body {
@@ -1488,7 +1490,7 @@ footer .footer-contact a:hover {
 
 /* —— About —— */
 .about {
-  background: var(--surface-darker);
+  background: var(--white);
   padding: clamp(3rem, 8vw, 4.5rem) 0;
 }
 
@@ -1663,7 +1665,7 @@ footer .footer-contact a:hover {
 
 /* —— Footer —— */
 footer {
-  background: var(--surface-darker);
+  background: var(--surface-dark);
   text-align: center;
   padding: 1.75rem 1rem 2rem;
   color: rgba(255, 255, 255, 0.7);
