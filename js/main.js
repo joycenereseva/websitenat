@@ -1,4 +1,5 @@
-const SITE_URL = "https://joycenereseva.github.io/websitenat/";
+/** Brazil mobile (73) 99104-0064 — digits only, no + for wa.me */
+const WHATSAPP_PHONE = "5573991040064";
 
 const WHATSAPP_MESSAGE = `Olá, Professora Joyce! Gostaria de saber mais sobre as aulas particulares de natação.
 
@@ -10,17 +11,22 @@ Idade:
 
 Local da piscina (bairro, rua):
 
-Me interessei pelo plano (regular, reduzida, premium):
-
-${SITE_URL}`;
+Me interessei pelo plano (regular, reduzida, premium):`;
 
 const WHATSAPP_URL =
-  "https://wa.me/5573991040064?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+  "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+
+/** Same query string for api.whatsapp.com (older WebViews) */
+const WHATSAPP_API_URL =
+  "https://api.whatsapp.com/send?phone=" +
+  WHATSAPP_PHONE +
+  "&text=" +
+  encodeURIComponent(WHATSAPP_MESSAGE);
 
 document.querySelectorAll("[data-whatsapp]").forEach((el) => {
   el.setAttribute("href", WHATSAPP_URL);
-  el.setAttribute("target", "_blank");
-  el.setAttribute("rel", "noopener noreferrer");
+  el.setAttribute("data-whatsapp-api", WHATSAPP_API_URL);
+  el.setAttribute("rel", "noopener");
 });
 
 const nav = document.querySelector(".site-nav");
