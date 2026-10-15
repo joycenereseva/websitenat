@@ -28,15 +28,53 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
-  color-scheme: light;
+  color-scheme: light only;
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text-dark);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  color-scheme: light only;
+  min-height: 100%;
+}
+
+main {
+  background-color: var(--bg);
+}
+
+/* Keep light page canvas on phones with system dark mode (overscroll / in-app browsers). */
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  main {
+    background-color: var(--bg);
+    color-scheme: light only;
+  }
+
+  body {
+    color: var(--text-dark);
+  }
+
+  .intro,
+  .material,
+  .about,
+  .steps {
+    background-color: var(--white);
+  }
+
+  .topics,
+  .depoimentos {
+    background-color: var(--teal-light);
+  }
+
+  .pillars,
+  .plans,
+  .faq {
+    background-color: var(--bg);
+  }
 }
 
 img {
