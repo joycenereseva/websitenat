@@ -804,6 +804,33 @@
       </section>
     </main>
 
+    <section class="cliente-texto" id="texto-cliente" aria-labelledby="cliente-texto-heading">
+      <div class="container cliente-texto-inner">
+        <h2 id="cliente-texto-heading" class="cliente-texto-title">Texto para enviar ao cliente</h2>
+        <p class="cliente-texto-hint">
+          Copie e cole no WhatsApp. A linha entre asteriscos (<code>*…*</code>) aparece em
+          <strong>negrito</strong> no app.
+        </p>
+        <div class="cliente-texto-actions">
+          <textarea
+            id="cliente-texto-template"
+            class="cliente-texto-area"
+            readonly
+            rows="6"
+            aria-label="Mensagem de apresentação para enviar ao cliente pelo WhatsApp"
+          >Olá ! Agradeço o seu contato e preferência. 😃
+Através dessa página você conhecerá o meu trabalho, planos e serviços disponíveis.
+Qualquer dúvida estou à disposição. 🌹
+*Informativo Natação | Aulas Particulares de Natação Infantil, Profª Joyce Neres*
+https://joycenereseva.github.io/websitenat/</textarea>
+          <button type="button" class="cliente-texto-btn" id="btn-copiar-cliente-texto">
+            Copiar texto
+          </button>
+        </div>
+        <p class="cliente-texto-status" id="cliente-texto-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
     <footer>
       <p>Natação Particular · Profª Joyce Neres</p>
       <p class="footer-contact">

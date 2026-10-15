@@ -74,3 +74,67 @@ document.querySelectorAll(".accordion-list").forEach((list) => {
 btnTop?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+const clienteTextarea = document.getElementById("cliente-texto-template");
+const btnCopiarCliente = document.getElementById("btn-copiar-cliente-texto");
+const clienteTextoStatus = document.getElementById("cliente-texto-status");
+
+function setClienteCopyStatus(message) {
+  if (!clienteTextoStatus) return;
+  clienteTextoStatus.textContent = message;
+  if (message) {
+    window.clearTimeout(setClienteCopyStatus._t);
+    setClienteCopyStatus._t = window.setTimeout(() => {
+      clienteTextoStatus.textContent = "";
+    }, 3500);
+  }
+}
+
+function copyTextFallback(text) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.position = "fixed";
+  ta.style.left = "-9999px";
+  document.body.appendChild(ta);
+  ta.select();
+  const ok = document.execCommand("copy");
+  document.body.removeChild(ta);
+  return ok;
+}
+
+async function copyClienteTexto() {
+  const text = clienteTextarea?.value?.trim() ?? "";
+  if (!text) return;
+
+  let copied = false;
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    }
+  } catch {
+    copied = false;
+  }
+
+  if (!copied) {
+    copied = copyTextFallback(text);
+  }
+
+  if (!copied && clienteTextarea) {
+    clienteTextarea.focus();
+    clienteTextarea.select();
+    setClienteCopyStatus("Selecione o texto e use Copiar (Ctrl+C ou Cmd+C).");
+    return;
+  }
+
+  btnCopiarCliente?.classList.add("is-copied");
+  btnCopiarCliente && (btnCopiarCliente.textContent = "Copiado!");
+  window.setTimeout(() => {
+    btnCopiarCliente?.classList.remove("is-copied");
+    if (btnCopiarCliente) btnCopiarCliente.textContent = "Copiar texto";
+  }, 2500);
+  setClienteCopyStatus("Texto copiado. Cole na conversa do WhatsApp.");
+}
+
+btnCopiarCliente?.addEventListener("click", copyClienteTexto);
