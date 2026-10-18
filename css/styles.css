@@ -15,6 +15,7 @@
   --font-body: "Inter", sans-serif;
   --nav-h: 72px;
   --container: min(1120px, 92vw);
+  color-scheme: light only;
 }
 
 *,
@@ -45,17 +46,26 @@ main {
   background-color: var(--bg);
 }
 
-/* Keep light page canvas on phones with system dark mode (overscroll / in-app browsers). */
+/* WhatsApp / Android WebView: system dark must not invert light bands or CSS variables. */
 @media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #f8f8f6;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-muted: #4a5f66;
+    --teal-light: #e8f4f6;
+    color-scheme: light only;
+  }
+
   html,
   body,
   main {
-    background-color: #f8f8f6;
+    background-color: #f8f8f6 !important;
     color-scheme: light only;
   }
 
   body {
-    color: #1a1a1a;
+    color: #1a1a1a !important;
   }
 
   .intro,
@@ -63,31 +73,32 @@ main {
   .material,
   .about,
   .steps {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
   }
 
   .intro-text h2 {
-    color: #0d5c6b;
+    color: #0d5c6b !important;
   }
 
   .intro-text p {
-    color: #4a5f66;
+    color: #4a5f66 !important;
   }
 
   .topics,
   .depoimentos {
-    background-color: #e8f4f6;
+    background-color: #e8f4f6 !important;
   }
 
   .topic-card {
-    background-color: #ffffff;
-    color: #1a1a1a;
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
   }
 
   .pillars,
   .plans,
   .faq {
-    background-color: #f8f8f6;
+    background-color: #f8f8f6 !important;
   }
 }
 
@@ -418,8 +429,8 @@ section {
 
 /* —— Olá Joyce —— */
 .intro {
-  background-color: var(--white);
-  color: var(--text-dark);
+  background-color: #ffffff;
+  color: #1a1a1a;
 }
 
 .intro-card {
