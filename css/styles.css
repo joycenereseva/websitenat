@@ -224,6 +224,93 @@ html.force-light-ui main {
   color-scheme: light only !important;
 }
 
+/* Extra WebView hardening when WhatsApp in-app browser is detected */
+html.force-light-ui.whatsapp-webview {
+  background: #f8f8f6 !important;
+  background-image: linear-gradient(#fff, #fff) !important;
+}
+
+html.force-light-ui.whatsapp-webview body {
+  background: #f8f8f6 !important;
+  background-image: linear-gradient(#fff, #fff) !important;
+}
+
+html.whatsapp-webview-banner-on {
+  --webview-banner-h: 52px;
+}
+
+.whatsapp-webview-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+  background: #ffffff;
+  border-bottom: 2px solid var(--teal);
+  color: var(--teal-dark);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(26, 127, 142, 0.12);
+}
+
+.whatsapp-webview-banner__text {
+  margin: 0;
+  flex: 1 1 12rem;
+  max-width: 28rem;
+}
+
+.whatsapp-webview-banner__cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #ffffff !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.whatsapp-webview-banner__cta:hover {
+  background: var(--teal-dark);
+}
+
+.whatsapp-webview-banner__dismiss {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.whatsapp-webview-banner__dismiss:hover {
+  background: #d4ebe9;
+}
+
+html.whatsapp-webview-banner-on .site-nav {
+  top: var(--webview-banner-h);
+}
+
+html.whatsapp-webview-banner-on .hero {
+  padding-top: calc(var(--nav-h) + var(--webview-banner-h) + 2rem);
+}
+
 html.force-light-ui body {
   color: #1a1a1a !important;
   -webkit-filter: none !important;
