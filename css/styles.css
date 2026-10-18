@@ -15,7 +15,7 @@
   --font-body: "Inter", sans-serif;
   --nav-h: 72px;
   --container: min(1120px, 92vw);
-  color-scheme: light only;
+  color-scheme: light only !important;
 }
 
 *,
@@ -46,26 +46,74 @@ main {
   background-color: var(--bg);
 }
 
-/* WhatsApp / Android WebView: system dark must not invert light bands or CSS variables. */
+/* WhatsApp / in-app WebView: block forced dark — literal colors, no brand redesign. */
+@media (forced-colors: active) {
+  :root {
+    color-scheme: light only;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
+    --teal: #1a7f8e;
+    --teal-dark: #0d5c6b;
+    --teal-light: #e8f4f6;
+    --surface-dark: #0f2a30;
+    --surface-darker: #0a2228;
     --bg: #f8f8f6;
     --white: #ffffff;
     --text-dark: #1a1a1a;
     --text-muted: #4a5f66;
-    --teal-light: #e8f4f6;
-    color-scheme: light only;
+    --accent: #3dd6c3;
+    --whatsapp: #25d366;
+    color-scheme: light only !important;
   }
 
   html,
   body,
   main {
     background-color: #f8f8f6 !important;
-    color-scheme: light only;
+    color-scheme: light only !important;
   }
 
   body {
     color: #1a1a1a !important;
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+
+  img,
+  picture,
+  video,
+  svg {
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+
+  .site-nav.scrolled {
+    background: rgba(15, 42, 48, 0.92) !important;
+  }
+
+  .hero {
+    background-color: #0f2a30 !important;
+    color: #ffffff !important;
+  }
+
+  .hero-copy h1 {
+    color: #f0ede6 !important;
+  }
+
+  .hero-copy h1 em {
+    color: #3dd6c3 !important;
+  }
+
+  .hero-copy p {
+    color: rgba(255, 255, 255, 0.88) !important;
+  }
+
+  .hero-badge {
+    color: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
   }
 
   .intro,
@@ -90,9 +138,29 @@ main {
     background-color: #e8f4f6 !important;
   }
 
-  .topic-card {
+  .topic-card,
+  .depoimento-card,
+  .pillar-item:not(.pillar-item--band-dark),
+  .plan-card:not(.plan-card--featured),
+  .faq-item,
+  .about-card {
     background-color: #ffffff !important;
     color: #1a1a1a !important;
+  }
+
+  .pillar-item--band-light {
+    background-color: #e8f4f6 !important;
+  }
+
+  .pillar-item--band-dark {
+    background-color: #0d5c6b !important;
+    color: #ffffff !important;
+  }
+
+  .pillar-item--band-dark p,
+  .pillar-item--band-dark ul,
+  .pillar-item--band-dark li {
+    color: rgba(255, 255, 255, 0.88) !important;
   }
 
   .pillars,
@@ -100,6 +168,149 @@ main {
   .faq {
     background-color: #f8f8f6 !important;
   }
+
+  .stats,
+  .cta-final,
+  footer {
+    background-color: #0f2a30 !important;
+    color: #ffffff !important;
+  }
+
+  .step-card {
+    background-color: #0f2a30 !important;
+    color: #ffffff !important;
+  }
+
+  .plan-card--featured {
+    background-color: #0f2a30 !important;
+    border-color: #1a7f8e !important;
+  }
+
+  .aviso-seguranca {
+    background-color: #e8f4f6 !important;
+    color: #0d5c6b !important;
+    border-color: rgba(26, 127, 142, 0.35) !important;
+  }
+
+  .section-title,
+  .section-label {
+    color: inherit;
+  }
+}
+
+/* JS backup when WebView inverts without reporting prefers-color-scheme: dark */
+html.force-light-ui {
+  color-scheme: light only !important;
+}
+
+html.force-light-ui {
+  --teal: #1a7f8e;
+  --teal-dark: #0d5c6b;
+  --teal-light: #e8f4f6;
+  --surface-dark: #0f2a30;
+  --surface-darker: #0a2228;
+  --bg: #f8f8f6;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-muted: #4a5f66;
+  --accent: #3dd6c3;
+  --whatsapp: #25d366;
+}
+
+html.force-light-ui,
+html.force-light-ui body,
+html.force-light-ui main {
+  background-color: #f8f8f6 !important;
+  color-scheme: light only !important;
+}
+
+html.force-light-ui body {
+  color: #1a1a1a !important;
+  -webkit-filter: none !important;
+  filter: none !important;
+}
+
+html.force-light-ui img,
+html.force-light-ui picture,
+html.force-light-ui video,
+html.force-light-ui svg {
+  -webkit-filter: none !important;
+  filter: none !important;
+}
+
+html.force-light-ui .site-nav.scrolled {
+  background: rgba(15, 42, 48, 0.92) !important;
+}
+
+html.force-light-ui .hero {
+  background-color: #0f2a30 !important;
+  color: #ffffff !important;
+}
+
+html.force-light-ui .hero-copy h1 {
+  color: #f0ede6 !important;
+}
+
+html.force-light-ui .hero-copy h1 em {
+  color: #3dd6c3 !important;
+}
+
+html.force-light-ui .hero-copy p {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+html.force-light-ui .intro,
+html.force-light-ui .intro-card,
+html.force-light-ui .material,
+html.force-light-ui .about,
+html.force-light-ui .steps {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+html.force-light-ui .topics,
+html.force-light-ui .depoimentos {
+  background-color: #e8f4f6 !important;
+}
+
+html.force-light-ui .topic-card,
+html.force-light-ui .depoimento-card,
+html.force-light-ui .pillar-item:not(.pillar-item--band-dark),
+html.force-light-ui .plan-card:not(.plan-card--featured),
+html.force-light-ui .faq-item,
+html.force-light-ui .about-card {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+html.force-light-ui .pillars,
+html.force-light-ui .plans,
+html.force-light-ui .faq {
+  background-color: #f8f8f6 !important;
+}
+
+html.force-light-ui .stats,
+html.force-light-ui .cta-final,
+html.force-light-ui footer {
+  background-color: #0f2a30 !important;
+}
+
+html.force-light-ui .step-card,
+html.force-light-ui .plan-card--featured {
+  background-color: #0f2a30 !important;
+}
+
+html.force-light-ui .pillar-item--band-dark {
+  background-color: #0d5c6b !important;
+}
+
+html.force-light-ui .pillar-item--band-light {
+  background-color: #e8f4f6 !important;
+}
+
+html.force-light-ui .aviso-seguranca {
+  background-color: #e8f4f6 !important;
+  color: #0d5c6b !important;
 }
 
 img {

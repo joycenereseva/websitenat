@@ -1,3 +1,5 @@
+document.documentElement.classList.add("force-light-ui");
+
 /** Brazil mobile (73) 99104-0064 — digits only, no + for wa.me */
 const WHATSAPP_PHONE = "5573991040064";
 
