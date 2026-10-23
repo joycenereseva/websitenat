@@ -1888,7 +1888,7 @@ footer .footer-contact a:hover {
 }
 
 .about-photo-wrap {
-  background: #0f2a30;
+  background-color: #000000;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1929,6 +1929,15 @@ footer .footer-contact a:hover {
 .about-accent {
   color: var(--accent);
   font-weight: 600;
+}
+
+html.force-light-ui .about-photo-wrap {
+  background-color: #000000 !important;
+}
+
+html.force-light-ui .about-card {
+  background-color: var(--surface-dark) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 @media (min-width: 640px) {
