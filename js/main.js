@@ -137,3 +137,37 @@ document.querySelectorAll(".accordion-list").forEach((list) => {
 btnTop?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+const PIX_KEY = "73991040064";
+const btnCopyPix = document.getElementById("btn-copy-pix");
+const copyPixFeedback = document.getElementById("copy-pix-feedback");
+
+function showCopyFeedback() {
+  if (!copyPixFeedback) return;
+  copyPixFeedback.textContent = "Copiado!";
+  window.clearTimeout(showCopyFeedback._t);
+  showCopyFeedback._t = window.setTimeout(() => {
+    copyPixFeedback.textContent = "";
+  }, 2200);
+}
+
+btnCopyPix?.addEventListener("click", async () => {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(PIX_KEY);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = PIX_KEY;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    showCopyFeedback();
+  } catch {
+    if (copyPixFeedback) copyPixFeedback.textContent = "";
+  }
+});

@@ -1492,6 +1492,15 @@ footer a:hover {
   margin-top: 0.5rem;
 }
 
+.plans-cards-lead {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 34rem;
+  margin: 0 auto 1.75rem;
+  line-height: 1.55;
+}
+
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1589,6 +1598,20 @@ footer a:hover {
   font-size: 0.88rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem;
+}
+
+.plan-installment-note {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.9;
+  margin-top: 0.2rem;
+}
+
+.plan-card--featured .plan-installment,
+.plan-card--featured .plan-installment-note {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .plan-save {
@@ -1704,6 +1727,156 @@ footer a:hover {
   font-size: 0.88rem;
   color: var(--teal-dark);
   font-weight: 600;
+}
+
+/* —— Forma de pagamento —— */
+.payment {
+  background: var(--white);
+  padding: 4.5rem 0;
+}
+
+.payment-card {
+  max-width: 720px;
+  margin-inline: auto;
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  border: 1px solid rgba(13, 92, 107, 0.12);
+  box-shadow: 0 8px 28px rgba(13, 92, 107, 0.06);
+}
+
+.payment-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.payment-lead {
+  text-align: center;
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.55;
+}
+
+.payment-block {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: 14px;
+  background: var(--white);
+  border: 1px solid rgba(13, 92, 107, 0.08);
+}
+
+.payment-line-title {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.45rem;
+}
+
+.payment-block p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.payment-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+
+.payment-details li {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  padding: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.payment-pix-key {
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.95rem;
+  color: var(--teal-dark);
+  letter-spacing: 0.02em;
+}
+
+.btn-copy-pix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid var(--teal);
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  margin-right: 0.65rem;
+  vertical-align: middle;
+}
+
+.btn-copy-pix:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(26, 127, 142, 0.2);
+  background: var(--white);
+}
+
+.btn-copy-pix:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-copy-feedback {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal);
+  min-height: 1.25rem;
+  vertical-align: middle;
+}
+
+.payment-comprovante {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.pillar-highlight-title {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+  margin-bottom: 0.65rem;
+}
+
+.pillar-payment-note {
+  margin-top: 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.pillar-payment-note a {
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pillar-block--matricula {
+  margin-top: 1rem;
 }
 
 @media (max-width: 900px) {
@@ -2019,7 +2192,7 @@ html.force-light-ui .about-card {
 }
 
 .faq-item.open .faq-answer {
-  max-height: 520px;
+  max-height: min(520px, 85vh);
 }
 
 /* —— CTA final —— */
